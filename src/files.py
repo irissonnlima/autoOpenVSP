@@ -1,23 +1,23 @@
 import os
 
-def open_estability(estability:str) -> dict:
-    missile     = {}
+def open_estability(file_name:str) -> dict:
+    aircraft    = {}
 
-    with open(estability) as file:
+    with open(file_name) as file:
         for l in file:
             aux = l.replace  ( ' ', '')
             aux = aux.replace('\t', '')
             aux = aux.replace('\n', '')
             aux = aux.replace( '#', '')
             if aux != '':
-                missile[aux.split(':')[0]] = float(aux.split(':')[1])
-    return missile
+                aircraft[aux.split(':')[0]] = float(aux.split(':')[1])
+    return aircraft
 
-def open_massProp(massProp:str) -> dict:              
-    missileMass = {}           
+def open_massProp(file_name:str) -> dict:              
+    aircraft= {}           
     name    = []
     totals  = []
-    with open(massProp) as file:
+    with open(file_name) as file:
         for l in file:
             aux  = l.replace  ('  ','')
             aux  = aux.replace('\n','')
@@ -27,5 +27,5 @@ def open_massProp(massProp:str) -> dict:
             if (auxl[0] == 'Name'):
                 name = auxl.copy()
     for i in range(1,len(name)):
-        missileMass[name[i]] = float(totals[i])
-    return missileMass
+        aircraft[name[i]] = float(totals[i])
+    return aircraft
