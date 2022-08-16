@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "autoopenvsp"
+version = "0.1.0"
+description = ""
+authors = ["irissonnlima <irisson2203@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.23.2"
+matplotlib = "^3.5.3"
+
+[tool.poetry.dev-dependencies]
+blue = "^0.9.1"
+isort = "^5.10.1"
+pip-audit = "^2.4.3"
+ipykernel = "^6.15.1"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
