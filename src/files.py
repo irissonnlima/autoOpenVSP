@@ -1,5 +1,4 @@
 import os
-from posixpath import split
 from re import sub 
 
 def open_estability(file_name: str) -> dict:
