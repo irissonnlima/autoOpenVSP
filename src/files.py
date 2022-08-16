@@ -49,13 +49,15 @@ def open_compGeom(file_name: str) -> dict:
     totals = []
     with open(file_name) as file:
         for l in file:
-            aux = l.replace('  ', '')
+            aux = sub(r'\s+','\t', l)   # Eliminate duplicate whitespaces
             aux = aux.replace('\n', '')
             aux = aux.split('\t')
             if aux[-1] == 'Totals':
                 totals = aux.copy()
             if aux[-1] == 'Name':
                 name = aux.copy()
+    name.reverse()
+    totals.reverse()
     for i in range(1, len(name)):
         aircraft[name[i]] = float(totals[i])
     return aircraft
