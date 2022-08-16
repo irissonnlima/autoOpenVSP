@@ -32,16 +32,6 @@ def open_massProp(file_name: str) -> dict:
         aircraft[name[i]] = float(totals[i])
     return aircraft
 
-def open_waveDrag(file_name:str) -> dict:
-    aircraft = {}
-    with open(file_name) as file:
-        for l in file:
-            aux = l.replace('  ', '')
-            aux = aux.replace('\n', '')
-            aux = aux.split(':')
-            if aux[0] == 'CdWave':
-                aircraft[aux[0]] = float(aux[1])
-    return aircraft
 
 def open_compGeom(file_name: str) -> dict:
     aircraft = {}
@@ -61,3 +51,19 @@ def open_compGeom(file_name: str) -> dict:
     for i in range(1, len(name)):
         aircraft[name[i]] = float(totals[i])
     return aircraft
+
+
+def open_parasiteDrag(file_name:str) -> dict:
+    return
+
+def open_waveDrag(file_name:str) -> dict:
+    aircraft = {}
+    with open(file_name) as file:
+        for l in file:
+            aux = l.replace('  ', '')
+            aux = aux.replace('\n', '')
+            aux = aux.split(':')
+            if aux[0] == 'CdWave':
+                aircraft[aux[0]] = float(aux[1])
+    return aircraft
+
