@@ -2,7 +2,7 @@
 name = "autoopenvsp"
 version = "0.1.0"
 description = ""
-authors = ["irissonnlima <irisson2203@gmail.com>"]
+authors = ["irissonnlima <irisson2203@gmail.com>", "widmarkkaue <widmarkkaue.s.c@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
@@ -15,6 +15,7 @@ blue = "^0.9.1"
 isort = "^5.10.1"
 pip-audit = "^2.4.3"
 ipykernel = "^6.15.1"
+pytest = "^7.1.2"
 
 
 [build-system]
