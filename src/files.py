@@ -31,4 +31,3 @@ def open_massProp(file_name: str) -> dict:
     for i in range(1, len(name)):
         aircraft[name[i]] = float(totals[i])
     return aircraft
-
