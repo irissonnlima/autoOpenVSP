@@ -1,4 +1,5 @@
 import os
+from posixpath import split
 from re import sub 
 
 def open_estability(file_name: str) -> dict:
@@ -54,7 +55,16 @@ def open_compGeom(file_name: str) -> dict:
 
 
 def open_parasiteDrag(file_name:str) -> dict:
-    return
+    aircraft = {}
+    with open(file_name) as file:
+        for l in file:
+            aux = sub(r'\s+','',l)
+            aux = aux.replace('\n','')
+            if ':' in aux and aux.split(':')[0] == 'Totals':
+                aux = aux.split(':')
+                aircraft[aux[0]] = float(aux[1])
+    return aircraft
+
 
 def open_waveDrag(file_name:str) -> dict:
     aircraft = {}
@@ -62,8 +72,8 @@ def open_waveDrag(file_name:str) -> dict:
         for l in file:
             aux = l.replace('  ', '')
             aux = aux.replace('\n', '')
-            aux = aux.split(':')
-            if aux[0] == 'CdWave':
+            if ':' in aux and aux.split(':')[0] == 'CdWave':
+                aux = aux.split(':')
                 aircraft[aux[0]] = float(aux[1])
     return aircraft
 
