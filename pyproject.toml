@@ -9,6 +9,8 @@ license = "MIT"
 python = "^3.8"
 numpy = "^1.23.2"
 matplotlib = "^3.5.3"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.1"
 
 [tool.poetry.dev-dependencies]
 blue = "^0.9.1"
