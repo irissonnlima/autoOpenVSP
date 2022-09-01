@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 my_os = sys.platform
 assert (

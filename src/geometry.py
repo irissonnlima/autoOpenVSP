@@ -21,13 +21,13 @@ class FuselageGeom:
         negative_volume: bool = False,
         # == XFORM ==
         absolute_coord_sys: bool = False,
-        X_loc:float=0.0,
-        X_rot:float=0.0,
-        Y_loc:float=0.0,
-        Y_rot:float=0.0,
-        Z_loc:float=0.0,
-        Z_rot:float=0.0,
-        origin_rotation:float=0.0
+        X_loc: float = 0.0,
+        X_rot: float = 0.0,
+        Y_loc: float = 0.0,
+        Y_rot: float = 0.0,
+        Z_loc: float = 0.0,
+        Z_rot: float = 0.0,
+        origin_rotation: float = 0.0,
     ) -> None:
         self.name = name
         self.colour = colour
